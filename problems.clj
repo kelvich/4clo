@@ -26,9 +26,15 @@
  [1 2 3 4 55 56])
 
 
-(fn [s1 s2]
-  (if (empty? s2)
-    s1
-    (recur (conj s1 (first s2)) (rest s2)))
- (s))
+((fn ! [s]
+   (if (empty? s) s
+       (conj (! (drop-last s)) (last s) )))
+ [1 2 3 3 3 4 4 5]
+ )
+
+;; 24
+reduce + 
+
+;; 25
+(filter odd? #{1 2 3 4 5})
 
