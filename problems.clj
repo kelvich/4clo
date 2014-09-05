@@ -38,3 +38,23 @@ reduce +
 ;; 25
 (filter odd? #{1 2 3 4 5})
 
+
+;; 26
+( (partial
+   (fn [fibs n]
+     (if (= n 2) (reverse fibs)
+         (recur
+          (conj fibs (->> fibs (take 2) (apply +)))
+          (- n 1)))) '(1 1)) 6)
+
+;; 27
+#(=
+  (apply str (reverse %))
+  (apply str %))
+
+
+
+
+
+
+
